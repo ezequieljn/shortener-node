@@ -1,0 +1,21 @@
+POST http://localhost:3030
+Content-Type: application/json
+
+{
+    "url": "https://google.com",
+	"alias": "google"
+}
+
+### Request alias google
+GET http://localhost:3030/google
+
+
+### Alias Random
+POST http://localhost:3030
+Content-Type: application/json
+{
+    "url": "https://google.com",
+}
+
+###
+GET http://localhost:3030
