@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    container_name: app
+    volumes:
+      - .:/home/node/app
+    ports:
+      - 3030:3030
+
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: db
+    volumes:
+      - ./.docker/psql/init.sql:/docker-entrypoint-initdb.d/init.sql
